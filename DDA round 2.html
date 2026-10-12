@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Riyasat | Old royalty, new rules</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@1,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--b:#0a0608;--bone:#f3ecdc;--m:#c1121f;--d:#7a1224;--g:#ffb703}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--b);color:var(--bone);font:16px/1.6 Inter,sans-serif;overflow-x:hidden}
+h1,h2,h3,.big{font-family:Anton,Impact,sans-serif;text-transform:uppercase;line-height:.95;font-weight:400}
+em{font:italic 700 1em 'Playfair Display',serif;text-transform:none;color:var(--g)}
+a{color:inherit}
+.gt{background:linear-gradient(90deg,#ff3d5a,#ffb703,#ff3d5a);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 4s linear infinite}
+@keyframes sh{to{background-position:200%}}
+nav{position:fixed;inset:0 0 auto;z-index:9;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 5vw;background:rgba(10,6,8,.9);backdrop-filter:blur(8px)}
+nav b{font:1.5rem Anton;letter-spacing:2px}
+nav div{display:flex;gap:16px;overflow-x:auto;font-size:.8rem;text-transform:uppercase;white-space:nowrap}
+nav a{text-decoration:none}nav a:hover{color:var(--g)}
+section{padding:90px 5vw 50px}
+h2{font-size:clamp(2.8rem,11vw,7.5rem);margin-bottom:24px}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(circle at 85% 15%,#ff3d5a66,transparent 45%),radial-gradient(circle at 10% 90%,#ffb70044,transparent 40%)}
+.hero h1{font-size:clamp(5rem,26vw,20rem);letter-spacing:-3px}
+.hero h1 span{-webkit-text-stroke:2px var(--bone);color:transparent}
+.hero p{font-size:1.3rem;margin:10px 0 24px}
+.stamp{position:absolute;right:6vw;bottom:10vh;width:120px;height:120px;border-radius:50%;background:var(--g);color:var(--b);display:grid;place-items:center;text-align:center;font:1.1rem/1 Anton;transform:rotate(12deg);animation:sp 8s linear infinite}
+@keyframes sp{to{transform:rotate(372deg)}}
+.btn{display:inline-block;background:linear-gradient(90deg,var(--g),#ff7b00);color:var(--b);padding:14px 28px;font-weight:600;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 8px 24px #ffb70055}
+.mq{background:linear-gradient(90deg,var(--m),var(--g));color:var(--b);overflow:hidden;white-space:nowrap;padding:10px 0;font:1.5rem Anton;text-transform:uppercase}
+.mq span{display:inline-block;animation:mq 18s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.two{display:grid;gap:30px}
+.drop{background:var(--bone);color:var(--b)}
+#cd{display:flex;gap:14px;font:clamp(2rem,9vw,5rem) Anton;color:var(--m)}
+#cd small{display:block;font:.7rem Inter;letter-spacing:2px;color:var(--b)}
+.art{border-radius:200px 200px 12px 12px;overflow:hidden;border:2px solid var(--g);box-shadow:0 0 40px #ffb70033}
+.art svg{display:block;width:100%}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+select,input,textarea{background:#17100f;color:var(--bone);border:1px solid #4a3a38;padding:12px;font:inherit;width:100%}
+.tools select{width:auto}
+.fb{background:none;color:var(--bone);border:1px solid var(--bone);padding:8px 16px;cursor:pointer;text-transform:uppercase}
+.fb.on,.fb:hover{background:var(--g);color:var(--b);border-color:var(--g)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{border:1px solid #3a2a2a;padding:14px;position:relative;transition:.3s;background:#120b0c}
+.card:hover{border-color:var(--g);transform:translateY(-6px)}
+.im{background:radial-gradient(circle at 50% 40%,#b3122f,#2a0a12 75%);margin-bottom:12px;padding:14px;transition:.3s}
+.card:hover .im{transform:scale(1.03)}
+.im svg{width:100%;height:230px}
+.card h3{font-size:1.6rem}
+.card p{font-size:.85rem;color:#c8bcb0}
+.dots i{display:inline-block;width:20px;height:20px;border-radius:50%;border:2px solid var(--bone);margin-right:6px;cursor:pointer}
+.price{font:1.6rem Anton;color:var(--g);margin:6px 0}
+.tag{position:absolute;top:22px;left:22px;background:var(--m);padding:3px 10px;font-size:.75rem;z-index:1}
+.look{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+.lk{padding:18px;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;transition:.3s}
+.lk:hover{transform:scale(1.02)}
+.lk.w{grid-column:span 2}
+.lk .arch{width:min(210px,80%);margin:0 auto 12px;border:2px solid #ffb703aa;border-radius:999px 999px 0 0;padding:18px 14px 0;background:#0003}
+.lk svg{width:100%;height:190px}
+.lk b{font:1.6rem Anton;text-transform:uppercase}
+.lk small{color:#fff9}
+.tabs{display:flex;gap:8px;margin-bottom:14px}
+.tab{display:none;overflow-x:auto}.tab.on{display:block}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border-bottom:1px solid #4a3a38;padding:6px 10px;text-align:left}
+th{color:var(--g);text-transform:uppercase;font-size:.8rem}
+.chips{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.chips div{border:1px solid #4a3a38;padding:10px;border-left:4px solid var(--g)}
+.chips b{color:var(--g);text-transform:uppercase}
+form{display:grid;gap:16px;max-width:760px}
+label{font-size:.85rem;text-transform:uppercase;letter-spacing:1px}
+.err{color:#ff6b6b;font-size:.8rem;min-height:1em;display:block}
+.bad{border-color:#ff6b6b}
+.pay{display:flex;flex-wrap:wrap;gap:16px}
+.pay label,.chk{display:flex;gap:8px;align-items:center;text-transform:none;font-size:.95rem}
+.pay input,.chk input{width:auto}
+#tot{border:1px dashed var(--g);padding:14px;font-size:1.1rem}
+#sum{display:none;border:2px solid var(--g);padding:24px;max-width:760px}
+#sum h3{font-size:2.4rem;color:var(--g)}
+footer{background:#000;padding:50px 5vw;display:grid;gap:20px;border-top:3px solid var(--m)}
+footer .big{font-size:clamp(3rem,16vw,10rem)}
+.rv{opacity:0;transform:translateY(40px);transition:1s}
+.rv.in{opacity:1;transform:none}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr;align-items:center}.look{grid-template-columns:repeat(4,1fr)}.lk.w{grid-column:span 2}section{padding:110px 7vw 60px}}
+</style>
+</head>
+<body>
+<nav><b class="gt">RIYASAT</b><div><a href="#story">Story</a><a href="#shop">Shop</a><a href="#look">Lookbook</a><a href="#size">Sizes</a><a href="#order">Order</a><a href="#contact">Contact</a><a href="https://instagram.com/DDA" target="_blank" style="color:var(--g)">@DDA</a></div></nav>
+
+<section class="hero">
+<h1 class="gt">Riya<span>sat</span></h1>
+<p>Old royalty, <em>new rules.</em></p>
+<div><a class="btn" href="#shop">Shop the Drop</a></div>
+<div class="stamp">LIMITED<br>DROP</div>
+</section>
+<div class="mq"><span>Old royalty, new rules &bull; Made in Patiala &bull; Limited drops &bull; When it's gone, it's gone &bull; Old royalty, new rules &bull; Made in Patiala &bull; Limited drops &bull; When it's gone, it's gone &bull;&nbsp;</span></div>
+
+<section class="drop rv">
+<div class="two"><div>
+<h2>The <em style="color:var(--m)">Drop</em></h2>
+<p style="max-width:520px;margin-bottom:20px">Premium streetwear with a touch of Punjabi heritage. Heavyweight 240 GSM combed cotton, brushed fleece, washed denim and recycled nylon, finished by artisans in Patiala. Eight pieces. Small batch. A new drop every month.</p>
+<div id="cd"></div><p style="margin-top:10px"><b>Next drop in</b></p>
+</div><div class="art" id="dropArt"></div></div>
+</section>
+
+<section id="story" class="rv">
+<h2>Our <em>Story</em></h2>
+<div class="two">
+<div class="art"><svg viewBox="0 0 300 380"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a0a3a"/><stop offset=".55" stop-color="#e5493a"/><stop offset="1" stop-color="#ffb703"/></linearGradient></defs><rect width="300" height="380" fill="url(#sk)"/><circle cx="225" cy="120" r="40" fill="#ffe29a"/><path d="M110 200Q150 100 190 200Z" fill="#12060c"/><path d="M150 108V80" stroke="#12060c" stroke-width="4"/><g fill="#12060c"><path d="M0 380V250Q35 190 70 250V380Z"/><path d="M70 380V250Q105 190 140 250V380Z"/><path d="M160 380V250Q195 190 230 250V380Z"/><path d="M230 380V250Q265 190 300 250V380Z"/></g><path d="M80 380Q90 280 150 270Q210 280 220 380Z" fill="#7a1224" stroke="#ffb703" stroke-width="3"/><path d="M150 270V380" stroke="#ffb703" stroke-width="3"/><circle cx="150" cy="232" r="26" fill="#c68a5c"/><path d="M118 226Q150 168 182 226Q150 210 118 226Z" fill="#ffb703"/><ellipse cx="150" cy="212" rx="34" ry="14" fill="#e8a000"/><path d="M118 226Q150 218 182 226" stroke="#7a1224" stroke-width="3" fill="none"/></svg></div>
+<div>
+<p style="margin-bottom:14px">Patiala has a royal past. Maharajas wore the finest fabrics, sharpest turbans and boldest embroidery in the country. Aryaman Saldi grew up around that heritage but never saw it in what people his age wore.</p>
+<p style="margin-bottom:14px">At 17, from his bedroom in 2023, he thrifted jackets, restitched them and sold them to friends. The first drop was 12 pieces and sold out in a day. A tailor uncle in Sheranwala Gate taught him pattern cutting, and a mill owner took a chance on a teenager with a spreadsheet.</p>
+<p><b class="gt">Riyasat</b> means a princely state, a kingdom. The idea is simple: old royalty, new rules. Patiala's heritage cut in modern fits, in small batches. Founded by Aryaman, now 20, still in college.</p>
+<p style="font-size:.75rem;color:#fff8;margin-top:12px">Illustration: stylised founder artwork. Swap in a real photo anytime.</p>
+</div></div>
+</section>
+
+<section id="shop" class="rv">
+<h2>Shop</h2>
+<div class="tools">
+<button class="fb on" data-c="All">All</button><button class="fb" data-c="T-shirt">T-shirt</button><button class="fb" data-c="Hoodie">Hoodie</button><button class="fb" data-c="Overshirt">Overshirt</button><button class="fb" data-c="Jacket">Jacket</button><button class="fb" data-c="Trousers">Trousers</button><button class="fb" data-c="Accessory">Accessory</button>
+<select id="sort"><option value="">Sort by price</option><option value="a">Low to high</option><option value="d">High to low</option></select>
+</div>
+<div class="grid" id="grid"></div>
+</section>
+
+<section id="look" class="rv">
+<h2>Look<em>book</em></h2>
+<div class="look" id="lookG"></div>
+</section>
+
+<section id="size" class="rv">
+<h2>Size <em>Guide</em></h2>
+<div class="tabs"><button class="fb on" data-t="t1">Tops</button><button class="fb" data-t="t2">Trousers</button><button class="fb" data-t="t3">Fits</button></div>
+<div class="tab on" id="t1"><table><tr><th>Size</th><th>S</th><th>M</th><th>L</th><th>XL</th><th>XXL</th></tr><tr><td>Chest (in)</td><td>38</td><td>40</td><td>42</td><td>44</td><td>46</td></tr><tr><td>Length (in)</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr></table></div>
+<div class="tab" id="t2"><table><tr><th>Size</th><th>28</th><th>30</th><th>32</th><th>34</th><th>36</th></tr><tr><td>Waist (in)</td><td>28</td><td>30</td><td>32</td><td>34</td><td>36</td></tr><tr><td>Hip (in)</td><td>38</td><td>40</td><td>42</td><td>44</td><td>46</td></tr></table></div>
+<div class="tab" id="t3"><div class="chips"><div><b>Regular</b><br>True to size, clean through the body.</div><div><b>Oversized</b><br>Drop shoulder, roomy. Size down for closer.</div><div><b>Boxy</b><br>Square, slightly cropped, wide torso.</div><div><b>Baggy</b><br>Loose hip to hem, wide leg.</div><div><b>Relaxed</b><br>Easy room, softly tapered leg.</div></div></div>
+</section>
+
+<section id="order" class="rv">
+<h2>Order / <em>Early Access</em></h2>
+<form id="f" novalidate>
+<div><label>Full name</label><input id="name"><span class="err"></span></div>
+<div><label>Phone (10 digits)</label><input id="phone" type="tel" maxlength="10"><span class="err"></span></div>
+<div><label>Email</label><input id="email" type="email"><span class="err"></span></div>
+<div><label>Instagram handle (optional)</label><input id="ig" placeholder="@yourhandle"><span class="err"></span></div>
+<div><label>Piece</label><select id="piece"></select><span class="err"></span></div>
+<div><label>Colour</label><select id="colour"></select><span class="err"></span></div>
+<div><label>Size</label><select id="size2"></select><span class="err"></span></div>
+<div><label>Quantity (1 to 5)</label><input id="qty" type="number" value="1"><span class="err"></span></div>
+<div id="tot">Pick a piece to see the total.</div>
+<div><label>Delivery address</label><textarea id="addr" rows="3"></textarea><span class="err"></span></div>
+<div><label>City</label><input id="city"><span class="err"></span></div>
+<div><label>Pincode (6 digits)</label><input id="pin" maxlength="6"><span class="err"></span></div>
+<div><label>Payment preference</label><div class="pay"><label><input type="radio" name="pay" value="UPI"> UPI</label><label><input type="radio" name="pay" value="Card"> Card</label><label><input type="radio" name="pay" value="Net banking"> Net banking</label><label><input type="radio" name="pay" value="Cash on delivery"> Cash on delivery</label></div><span class="err" id="payE"></span></div>
+<label class="chk"><input type="checkbox" id="early"> Join the early access list for the next drop</label>
+<div><label class="chk"><input type="checkbox" id="cons"> I agree to be contacted by call, WhatsApp or email</label><span class="err"></span></div>
+<button class="btn" type="submit">Place order</button>
+</form>
+<div id="sum"></div>
+</section>
+
+<section id="contact">
+<h2>Con<em>tact</em></h2>
+<p>Email: <a href="mailto:sandhuarjun679@gmail.com">sandhuarjun679@gmail.com</a><br>Phone / WhatsApp: <a href="https://wa.me/919728581222" target="_blank">+91 97285 81222</a><br>Instagram: <a href="https://instagram.com/DDA" target="_blank">@DDA</a> &bull; <a href="#">YouTube</a> &bull; <a href="#">X</a></p>
+</section>
+<footer>
+<div class="big gt">Riyasat</div>
+<p><b>Shipping:</b> Free on orders above &#8377;3,000. Delivered in 4 to 7 working days. Payment by UPI, cards, net banking or cash on delivery.<br><b>Exchange:</b> 7-day size exchange on all pieces.</p>
+<p>&copy; 2026 Riyasat, Patiala, Punjab. All rights reserved.</p>
+</footer>
+
+<script>
+const T=['S','M','L','XL','XXL'],B=['28','30','32','34','36'],O=['One size'];
+const P=[
+{n:'Riyasat Heavy Tee',c:'T-shirt',f:'Oversized',col:['Bone','Black','Maroon'],s:T,p:2499},
+{n:'Paranda Hoodie',c:'Hoodie',f:'Oversized',col:['Black','Ash','Royal Blue'],s:T,p:5499},
+{n:'Phulkari Panel Overshirt',c:'Overshirt',f:'Regular',col:['Ecru','Olive','Black'],s:T,p:5999,so:1},
+{n:'Nawab Jacket',c:'Jacket',f:'Boxy',col:['Black','Maroon'],s:T,p:8999},
+{n:'Bomber Zari Track Jacket',c:'Jacket',f:'Regular',col:['Black with gold','Ivory with maroon'],s:T,p:6999},
+{n:'Baggy Cargo Pants',c:'Trousers',f:'Baggy',col:['Khaki','Black','Stone'],s:B,p:4999},
+{n:'Patiala Pleat Pants',c:'Trousers',f:'Relaxed',col:['Black','Sand','Charcoal'],s:B,p:5299,so:1},
+{n:'Royal Crest Cap',c:'Accessory',f:'One size',col:['Black','Bone','Maroon'],s:O,p:1799}];
+const H={Bone:'#f3ecdc',Black:'#141414',Maroon:'#9b1330','Royal Blue':'#2a4bb5',Ash:'#9a9a9a',Ecru:'#e3d8bd',Olive:'#5f6b2e','Black with gold':'#141414','Ivory with maroon':'#f4ecd8',Khaki:'#a89664',Stone:'#b9b3a5',Sand:'#d2bd96',Charcoal:'#3a3a3a'};
+const SL='M58 44L84 30L100 50L116 30L142 44L184 132L158 150L142 120V212H58V120L42 150L16 132Z';
+const G={
+'T-shirt':c=>`<path d="M62 34L86 22Q100 40 114 22L138 34L176 74L152 96L138 82V204H62V82L48 96L24 74Z" fill="${c}"/><path d="M86 22Q100 40 114 22" fill="none" stroke="#0008" stroke-width="5"/>`,
+Hoodie:c=>`<path d="M60 52L84 38Q100 56 116 38L140 52L182 124L156 144L140 120V210H60V120L44 144L18 124Z" fill="${c}"/><path d="M78 42Q100 -4 122 42Q100 66 78 42Z" fill="${c}"/><path d="M76 150H124L132 186H68Z" fill="#0004"/><path d="M94 62V98M106 62V98" stroke="#fffa" stroke-width="3"/>`,
+Overshirt:c=>`<path d="${SL}" fill="${c}"/><path d="M84 30L100 62L116 30" fill="#0003"/><path d="M100 62V212" stroke="#0007" stroke-width="3"/><rect x="66" y="128" width="26" height="28" fill="#0003"/><rect x="108" y="128" width="26" height="28" fill="#0003"/><path d="M70 136H88M112 136H130" stroke="#ffb703" stroke-width="3"/>`,
+Jacket:c=>`<path d="${SL}" fill="${c}"/><path d="M84 30L100 56L116 30" fill="#0004"/><path d="M100 56V212" stroke="#ffb703" stroke-width="3"/><path d="M26 112L52 128M174 112L148 128" stroke="#ffb703" stroke-width="4"/><rect x="58" y="198" width="84" height="14" fill="#0005"/>`,
+Trousers:c=>`<path d="M62 20H138L154 226H110L100 98L90 226H46Z" fill="${c}"/><path d="M62 20H138V38H62Z" fill="#0004"/><path d="M80 40V120M120 40V120" stroke="#0006" stroke-width="3"/>`,
+Accessory:c=>`<path d="M36 138Q36 56 106 56Q172 56 172 138Z" fill="${c}"/><path d="M26 138H196Q206 160 104 164Q20 160 26 138Z" fill="${c}"/><path d="M106 56V138" stroke="#0005" stroke-width="3"/><circle cx="106" cy="98" r="9" fill="#ffb703"/>`};
+const svg=(k,c,h)=>`<svg viewBox="0 0 220 240"${h?` style="height:${h}"`:''}><g stroke="#ffb703" stroke-opacity=".55" stroke-width="2" stroke-linejoin="round">${G[k](c)}</g></svg>`;
+const $=id=>document.getElementById(id),rs=n=>'\u20B9'+n.toLocaleString('en-IN');
+let cat='All';
+function sw(i,c){$('m'+i).innerHTML=svg(P[i].c,H[c])}
+function draw(){
+ let l=P.map((x,i)=>({...x,i})).filter(x=>cat=='All'||x.c==cat),s=$('sort').value;
+ if(s=='a')l.sort((a,b)=>a.p-b.p);if(s=='d')l.sort((a,b)=>b.p-a.p);
+ $('grid').innerHTML=l.map(x=>`<div class="card">${x.so?'<span class="tag">SOLD OUT</span>':''}<div class="im" id="m${x.i}">${svg(x.c,H[x.col[0]])}</div><h3>${x.n}</h3><p>${x.c} &bull; ${x.f} fit</p><div class="dots">${x.col.map(c=>`<i title="${c}" onclick="sw(${x.i},'${c}')" style="background:${H[c]}"></i>`).join('')}</div><p>${x.col.join(', ')}</p><p>Sizes: ${x.s.length>1?x.s[0]+' to '+x.s[x.s.length-1]:'One size'}</p><div class="price">${rs(x.p)}</div>${x.so?'':`<a class="btn" href="#order" onclick="pick('${x.n}')">Order</a>`}</div>`).join('');
+}
+document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-c]').forEach(y=>y.classList.remove('on'));b.classList.add('on');cat=b.dataset.c;draw()});
+document.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-t]').forEach(y=>y.classList.remove('on'));document.querySelectorAll('.tab').forEach(y=>y.classList.remove('on'));b.classList.add('on');$(b.dataset.t).classList.add('on')});
+$('sort').onchange=draw;draw();
+$('dropArt').innerHTML=`<div style="background:radial-gradient(circle at 50% 30%,#c1121f,#1a0508);padding:20px;display:flex">${['Jacket','Hoodie','T-shirt'].map((k,i)=>svg(k,['#141414','#2a4bb5','#f3ecdc'][i])).join('')}</div>`;
+const L=[['Nawab after the durbar','Jacket','#9b1330','linear-gradient(160deg,#ffb703,#7a1224)','Court lamps, zari and a boxy cut',1],['Phulkari panel','Overshirt','#5f6b2e','linear-gradient(160deg,#ff3d5a,#2a0a3a)','Embroidery by Patiala artisans'],['Paranda hoodie','Hoodie','#2a4bb5','linear-gradient(160deg,#2a0a3a,#c1121f)','Fleece for cold city nights'],['Old city, new fit','Trousers','#d2bd96','linear-gradient(160deg,#7a1224,#ffb703)','Patiala pleat, relaxed',1],['Royal crest','Accessory','#141414','linear-gradient(160deg,#e5493a,#2a0a3a)','The crown, reimagined']];
+$('lookG').innerHTML=L.map(x=>`<div class="lk${x[5]?' w':''}" style="background:${x[3]}"><div class="arch">${svg(x[1],x[2])}</div><div><b>${x[0]}</b><br><small>${x[4]}</small></div></div>`).join('');
+$('piece').innerHTML='<option value="">Select a piece</option>'+P.filter(x=>!x.so).map(x=>`<option>${x.n}</option>`).join('');
+function pick(n){$('piece').value=n;upd()}
+function cur(){return P.find(x=>x.n==$('piece').value)}
+function upd(){
+ const x=cur();
+ $('colour').innerHTML='<option value="">Select colour</option>'+(x?x.col.map(c=>`<option>${c}</option>`).join(''):'');
+ $('size2').innerHTML='<option value="">Select size</option>'+(x?x.s.map(c=>`<option>${c}</option>`).join(''):'');
+ tot();
+}
+function tot(){
+ const x=cur(),q=+$('qty').value;
+ if(!x||!(q>=1&&q<=5)){$('tot').textContent=x?'Price: '+rs(x.p):'Pick a piece to see the total.';return}
+ const t=x.p*q;
+ $('tot').innerHTML=`Price: ${rs(x.p)} &times; ${q} = <b style="color:var(--g)">${rs(t)}</b><br>${t>3000?'Free shipping applied':'Add '+rs(3001-t)+' more for free shipping'}`;
+}
+$('piece').onchange=upd;$('qty').oninput=tot;
+function bad(id,m){const e=$(id);e.classList.add('bad');e.parentElement.querySelector('.err').textContent=m;return 1}
+function ok(id){const e=$(id);e.classList.remove('bad');e.parentElement.querySelector('.err').textContent=''}
+$('f').onsubmit=e=>{
+ e.preventDefault();let n=0;
+ ['name','phone','email','ig','piece','colour','size2','qty','addr','city','pin','cons'].forEach(ok);$('payE').textContent='';
+ const v=id=>$(id).value.trim();
+ if(!v('name'))n+=bad('name','Please enter your full name.');
+ if(!/^\d{10}$/.test(v('phone')))n+=bad('phone','Phone number must be exactly 10 digits.');
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email')))n+=bad('email','Enter a valid email address.');
+ if(v('ig')&&!/^@[A-Za-z0-9._]+$/.test(v('ig')))n+=bad('ig','Instagram handle must start with @.');
+ if(!v('piece'))n+=bad('piece','Please choose a piece.');
+ if(!v('colour'))n+=bad('colour','Please choose a colour.');
+ if(!v('size2'))n+=bad('size2','Please choose a size.');
+ const q=+v('qty');if(!Number.isInteger(q)||q<1||q>5)n+=bad('qty','Quantity must be between 1 and 5.');
+ if(!v('addr'))n+=bad('addr','Please enter your delivery address.');
+ if(!v('city'))n+=bad('city','Please enter your city.');
+ if(!/^\d{6}$/.test(v('pin')))n+=bad('pin','Pincode must be exactly 6 digits.');
+ const pay=document.querySelector('input[name=pay]:checked');
+ if(!pay){$('payE').textContent='Please select a payment method.';n++}
+ if(!$('cons').checked)n+=bad('cons','Consent is required to place the order.');
+ if(n){document.querySelector('.bad,#payE:not(:empty)').scrollIntoView({block:'center'});return}
+ const x=cur(),t=x.p*q;
+ $('f').style.display='none';$('sum').style.display='block';
+ $('sum').innerHTML=`<h3>Order received</h3><p>Thank you, ${v('name')}. Your drop is locked in.</p><p><b>Piece:</b> ${x.n}<br><b>Colour:</b> ${v('colour')}<br><b>Size:</b> ${v('size2')}<br><b>Quantity:</b> ${q}<br><b>Total:</b> ${rs(t)} ${t>3000?'(free shipping)':''}<br><b>Delivery city:</b> ${v('city')}<br><b>Payment:</b> ${pay.value}${$('early').checked?'<br>You are on the early access list.':''}</p><button class="btn" onclick="location.reload()">New order</button>`;
+ $('sum').scrollIntoView({block:'center'});
+};
+function cd(){
+ const d=new Date(),e=new Date(d.getFullYear(),d.getMonth()+1,1);let r=Math.max(0,e-d)/1000|0;
+ $('cd').innerHTML=[['days',86400],['hrs',3600],['min',60],['sec',1]].map(([l,k])=>{const v=Math.floor(r/k);r%=k;return`<div>${String(v).padStart(2,'0')}<small>${l}</small></div>`}).join('');
+}
+cd();setInterval(cd,1000);
+const io=new IntersectionObserver(a=>a.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.rv').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
